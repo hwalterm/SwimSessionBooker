@@ -3,7 +3,7 @@ import json
 import datetime
 from dateutil import parser
 
-def getReservationData(Start_Date = '2020-10-27', End_Date = '2020-10-28'):
+def getReservationData(Start_Date = '2020-10-28', End_Date = '2020-10-30'):
   headers = {
       'authority': 'arlingtonaquatics.ezfacility.com',
       'accept': '*/*',
@@ -156,8 +156,4 @@ def getResponseindex(responseData, reservationType = 'Lap Swimming  Wash-Lib',
         ):
       return responseData.index(i)
   return -1
-
-resDat = getReservationData()
-resInd = getResponseindex(resDat)
-print(resDat[resInd])
 
