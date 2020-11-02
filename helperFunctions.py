@@ -3,6 +3,7 @@ import json
 import datetime
 from dateutil import parser
 
+
 def getReservationData(Start_Date = '2020-10-28', End_Date = '2020-10-30'):
   headers = {
       'authority': 'arlingtonaquatics.ezfacility.com',

@@ -1,6 +1,6 @@
 ####Book Swims at Arlington aquatic centers
 #Add logic to check if class is booked
-
+from datetime import date, timedelta
 from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 
@@ -33,7 +33,9 @@ def lambda_handler(event, context):
 #     browser.find_element_by_xpath('//*[@id="fc-actions"]/li[2]/button').click()
 
     #Get the form data
-    formData = helperFunctions.getReservationData()
+    today = date.today()
+    tomorrow = date.today() + timedelta(days = 1)
+    formData = helperFunctions.getReservationData(today,tomorrow)
 
     #Find the index for the 7am washlib reservation (We can put some logic in for a second choice if it's full)
     tableIndex =(helperFunctions.getResponseindex(formData))
