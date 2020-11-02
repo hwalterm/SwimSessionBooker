@@ -12,9 +12,9 @@ import helperFunctions
 
 import helperFunctions
 
-username = "hwalterm"
-password = "Wolfe1994;"
-securityCode = '055'
+username = ""
+password = ""
+securityCode = ''
 
 def lambda_handler(event, context):
     #uncomment below to run in headless mode
@@ -72,6 +72,9 @@ def lambda_handler(event, context):
         WebDriverWait(browser, 20).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="defaultCVN"]'))).click()
         WebDriverWait(browser, 20).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="defaultCVN"]'))).send_keys(
             securityCode)
+        WebDriverWait(browser, 20).until(ec.element_to_be_clickable((By.XPATH, '//*[@id="btnCheckOut"]'))).click()
+
+
 
         body = f"Headless Chrome Initialized, Page title: {browser.title}"
 
