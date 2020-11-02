@@ -12,9 +12,9 @@ import helperFunctions
 
 import helperFunctions
 
-username = ""
-password = ""
-securityCode = ''
+username = "hwalterm"
+password = "Wolfe1994;"
+securityCode = '055'
 
 def lambda_handler(event, context):
     #uncomment below to run in headless mode
